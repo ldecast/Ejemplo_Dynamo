@@ -1,0 +1,39 @@
+
+--------------------------------USUARIOS--------------------------------
+aws dynamodb create-table \
+    --table-name Users \
+    --attribute-definitions AttributeName=Username,AttributeType=S \
+    --key-schema AttributeName=Username,KeyType=HASH \
+    --provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1 \
+    --tags Key=Use,Value=forUsers
+
+
+{
+    "TableDescription": {
+        "AttributeDefinitions": [
+            {
+                "AttributeName": "Username",
+                "AttributeType": "S"
+            }
+        ],
+        "TableName": "Users",
+        "KeySchema": [
+            {
+                "AttributeName": "Username",
+                "KeyType": "HASH"
+            }
+        ],
+        "TableStatus": "CREATING",
+        "CreationDateTime": "2022-04-22T09:34:36.162000-06:00",
+        "ProvisionedThroughput": {
+            "NumberOfDecreasesToday": 0,
+            "ReadCapacityUnits": 1,
+            "WriteCapacityUnits": 1
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:us-east-1:294223531098:table/Users",
+        "TableId": "37f66888-52c8-4050-b776-2729d8b131e1"
+    }
+}
+
